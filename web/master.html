@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Happy Shopping</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container-fluid">
+<div id="header" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<script>
+$("#header").load("header.jsp");
+</script>
+</div></div><br>
+<div class="container-fluid">
+<div class="row">
+<div id="menu" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+<div class="navbar">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background-color:#0099cc;">
+        <span class="icon-bar" style="background-color:white;"></span>
+        <span class="icon-bar" style="background-color:white;"></span>
+        <span class="icon-bar" style="background-color:white;"></span> 
+      </button>
+    <div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav nav-pills nav-stacked">
+<li onclick="home()" class="active">HOME</li>
+<li onclick="shoes()">Shoes</li>
+<li onclick="lappy()">Laptops</li>
+<li onclick="mobiles()">Mobiles</li>
+<li id="flip">Filter<b style="float: right">+</b></li>
+<div id="panel" style="display:none;">
+    <li><input type="checkbox" name="500"> Less than 500</li>
+<li><input type="checkbox" name="2500"> Less than 2500</li>
+<li><input type="checkbox" name="5000"> Less than 5000</li>
+<li><input type="checkbox" name="25000"> Less than 25000</li>
+<li><input type="checkbox" name="50000"> Less than 50000</li></div>
+</ul>
+        
+</div></div></div>
+<div id="content" class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+<script>
+$("#content").load("content.html");
+</script>
+</div>
+</div></div>
+<div class="container-fluid">
+<div id="footer" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<script>
+$("#footer").load("footer.html");
+</script></div></div>
+<script>
+    $(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+function home()
+{
+$("#content").load("content.html");
+}
+function shoes()
+{
+$("#content").load("fetch.jsp?name=shoes");
+}
+function lappy()
+{
+$("#content").load("fetch.jsp?name=laptop");
+}
+function mobiles()
+{
+$("#content").load("fetch.jsp?name=mobiles");
+}</script>
+</body>
+</html>
